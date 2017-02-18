@@ -1,0 +1,61 @@
+How to Install Ruby
+
+Install Ruby and the Ruby DevKit
+1. Install  Ruby [Ruby 2.3.1 (x64)](Url: http://rubyinstaller.org/downloads/)
+
+2. Install Ruby DevKit (DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe)
+
+3. Setup Ruby
+	- save it with folder name c:\ruby
+	- Check following checkboxs:
+		* Add ruby executable to your path
+		* Associate .rb and .rbw files with ruby installation
+	- Click on installation
+	
+4. Setup Ruby DevKit
+	- Create devkit folder under c:\Ruby
+	- Extract the devkit under the path c:\Ruby\devkit
+
+
+5. In the command prompt run
+	- Open command prompt (Administrator)
+	- Change the initial path with ruby devkit path by(cd C:\ruby\DevKit)
+	- put command: ruby dk.rb init
+	- then displayed a message as Initialization completed!
+	- Once Initialization completed add the command: ruby dk.rb install
+	- If getting a message as Invalid configuration then add '- c:\ruby' into the file 'config.yml'
+	- And again repeat the command: ruby dk.rb install then get message as installing at devkit.rb path
+	
+6. To install rails 
+	- Open command prompt(Admin)
+	- Into the initial path add command gem install rails then its installing all the required gems
+	- Then installed gems file should be available at the path C:\Ruby\lib\ruby\gems\2.3.0\gems
+	- Close the window
+	
+7. To generate rails new app
+	- go to the path c:\ruby
+	- create folder there as 'rails'
+	- Open Command prompt and change directory with c:\ruby\rails
+	- Give command as: rails new firstapp
+	- then you can see the framework has been created under the folder 'rails'
+	
+8. To install bundle
+	- Go to the app path "c:ruby\rails\firstapp"
+	- Command: gem install bundler
+	- then enter command: 'bundle install'
+	
+9. To use calabash for android
+	- Latest and greatest SDK should be installed
+	- Create an evironment variables "ANDROID_HOME" to point loacation of installed SDK folder
+	
+10. To install calabash for android
+	- Go to the loacation of the calabash
+	- Give command  sudo gem install calabash-android
+	
+11. To start ruby application
+	- Go to "c:ruby\rails\firstapp"
+	- Give command: 'rails server'
+
+12. Enter keystore, if getting invalid date format
+	keytool -genkey -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+	
